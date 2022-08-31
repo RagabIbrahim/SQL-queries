@@ -1,0 +1,15 @@
+SELECT order_date, product_type,
+
+  sum(quantity) over( partition by product_type order by order_date ) as cum_purchased 
+  
+FROM total_trans
+order by order_date;
+
+** partition
+It gives aggregated columns with each record in the specified table.
+
+We have 15 records in the Orders table. In the query output of SQL PARTITION BY, 
+we also get 15 rows along with Min, Max and average values.
+
+** group by
+t gives one row per group in result set. For example, we get a result for each group of CustomerCity in the GROUP BY clause.
