@@ -1,0 +1,9 @@
+SELECT candidate_id FROM candidates
+where skill IN ('Python', 'Tableau', 'PostgreSQL')
+GROUP BY candidate_id
+HAVING COUNT(*) = 3
+ORDER BY candidate_id
+;
+
+// filter skills  using this code " skill IN ('Python', 'Tableau', 'PostgreSQL') "
+// then work on it using group by and having
